@@ -80,9 +80,10 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: app-build
+        path: ./artifacts
         
     - name: Extract application
-      run: tar -xzf dist/app.tar.gz -C .
+      run: tar -xzf ./artifacts/app.tar.gz -C .
       
     - name: Install dependencies
       run: npm install --only=production
